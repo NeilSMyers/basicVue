@@ -25,12 +25,37 @@
       <p>Thank you again for your interest and relationship with DailySmarty. Please see the guidelines outlined below (logo
         assets can be downloaded below):</p>
 
+
+
+
+
       <div id="app">
-        <h2 @click="toggle">{{ greeting() }}</h2>
-        <div v-if="show">
-          <img src="images/logo-with-margin.png" :width="imgWidth">
+        <h2>{{ greeting() }}</h2>
+        <div>
+          <button @click="showImgOptions">Options</button>
         </div>
+        <img src="images/logo-with-margin.png" :width="imgWidth" :height="imgHeight">
+
+
+        <div>
+          <h2>Google</h2>
+
+          <div>
+            <a :href="googleUrl" @click.prevent="showGoogleUrl">google link</a>
+          </div>
+        </div>
+
+        <div>
+          <h2>Math Section</h2>
+
+          <input type="text" @keyup.enter="square">
+          <div>
+            {{squaredResult}}
+          </div>
+        </div>
+
       </div>
+
 
       <div class="style-details">
         <div class="style-details-text">
