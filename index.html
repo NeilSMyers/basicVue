@@ -54,6 +54,13 @@
           </div>
         </div>
 
+        <div>
+          <h2>font sizer</h2>
+          <button @click="fontSizer(5)">Bigger</button>
+          <button @click="fontSizer(-5)">Smaller</button>
+          <p :style="{fontSize: fontSize + 'px'}">wow</p>
+        </div>
+
       </div>
 
 

@@ -9,7 +9,8 @@ new Vue({
     medImg: false,
     lgImg: false,
     googleUrl: "https://www.google.com",
-    squaredResult: 0
+    squaredResult: 0,
+    fontSize: 20
   },
   methods: {
     greeting() {
@@ -38,6 +39,9 @@ new Vue({
     },
     square(evt) {
       return this.squaredResult = evt.target.value ** 2
+    },
+    fontSizer(amt) {
+      return this.fontSize = this.fontSize + amt
     }
   }
 })
