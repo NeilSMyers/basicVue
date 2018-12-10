@@ -42,6 +42,22 @@ new Vue({
     },
     fontSizer(amt) {
       return this.fontSize = this.fontSize + amt
+    },
+    hotKey() {
+      console.log("hotkey")
     }
+  }
+})
+
+new Vue({
+  el: "#logoList",
+  data: {
+    testing: "logo list component",
+    logos: [
+      { className: "image_logos", imgSrc: "images/ds_circle_logo.png"},
+      { className: "image_logos", imgSrc: "images/ds_square_logo.png" },
+      { className: "text_logos", imgSrc: "images/ds_icon_text_logo.png" },
+      { className: "text_logos", imgSrc: "images/ds_text_logo.png" }
+    ]
   }
 })

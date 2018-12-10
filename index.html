@@ -3,165 +3,55 @@
 
 <head>
   <meta charset='UTF-8'>
-  <title>CSS Grid</title>
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+  <title>Vue Basics</title>
   <link href="styles.css" rel="stylesheet">
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
 <body>
-  <div class="container">
-    <div class="content-wrapper">
-      <h2>Branding Guidelines</h2>
-      <p>Welcome to the DailySmarty branding guidelines! We’re happy that you see the worth of our product and understand the
-        value in promoting it correctly.</p>
 
-      <p>The folowing guides have been provided to assist you in maintaining the integrity and intedended useage of our logo
-        and branding in your marketing materials. Keeping with these guidelines will reinforce both your and our professionalism
-        and legitimacy in the eyes of the audience.</p>
+  <div id="app">
+    <h2>{{ greeting() }}</h2>
+    <div>
+      <button @click="showImgOptions">Options</button>
+    </div>
+    <img src="images/logo-with-margin.png" :width="imgWidth" :height="imgHeight">
 
-      <p>Thank you again for your interest and relationship with DailySmarty. Please see the guidelines outlined below (logo
-        assets can be downloaded below):</p>
+    <div>
+      <h2>Google</h2>
 
-
-
-
-
-      <div id="app">
-        <h2>{{ greeting() }}</h2>
-        <div>
-          <button @click="showImgOptions">Options</button>
-        </div>
-        <img src="images/logo-with-margin.png" :width="imgWidth" :height="imgHeight">
-
-
-        <div>
-          <h2>Google</h2>
-
-          <div>
-            <a :href="googleUrl" @click.prevent="showGoogleUrl">google link</a>
-          </div>
-        </div>
-
-        <div>
-          <h2>Math Section</h2>
-
-          <input type="text" @keyup.enter="square">
-          <div>
-            {{squaredResult}}
-          </div>
-        </div>
-
-        <div>
-          <h2>font sizer</h2>
-          <button @click="fontSizer(5)">Bigger</button>
-          <button @click="fontSizer(-5)">Smaller</button>
-          <p :style="{fontSize: fontSize + 'px'}">wow</p>
-        </div>
-
+      <div>
+        <a :href="googleUrl" @click.prevent="showGoogleUrl">google link</a>
       </div>
+    </div>
 
+    <div>
+      <h2>Math Section</h2>
 
-      <div class="style-details">
-        <div class="style-details-text">
-          <h3>Primary Logo</h3>
-          <div>White Space = 1/4 logo width</div>
-          <div>White logo on primary blue</div>
-
-          <h3>Primary Color</h3>
-          <div>#0079FF</div>
-          <div>RGB 0, 121, 255</div>
-
-          <h3>Name</h3>
-          <div>Capitalize “D” and “S”</div>
-          <div>No space between the words</div>
-        </div>
-
-        <div class="style-details-logo">
-          <img src="images/logo-with-margin.png">
-        </div>
+      <input type="text" @keyup.enter="square">
+      <div>
+        {{squaredResult}}
       </div>
+    </div>
 
-      <div class="dos_donts_wrapper">
-        <div class="dos_donts_list">
-          <div class="dos_donts_heading blue_text">
-            Logo Do’s
-          </div>
+    <div>
+      <h2>font sizer</h2>
+      <button @click="fontSizer(5)">Bigger</button>
+      <button @click="fontSizer(-5)">Smaller</button>
+      <p :style="{fontSize: fontSize + 'px'}">wow</p>
+    </div>
 
-          <ul>
-            <li>Provide adequate white space surrounding the logo.</li>
-            <li>Icon must always be white</li>
-            <li>Keep a large size so the icon doesn’t get obscured.</li>
-            <li>Place logo on white or light background colors</li>
-          </ul>
-        </div>
-
-        <div class="dos_donts_list">
-          <div class="dos_donts_heading red_text">
-            Logo Dont’s
-          </div>
-
-          <ul>
-            <li>Strech or scale the logo non-uniformely</li>
-            <li>Crop or partially cover the logo with other objects</li>
-            <li>Alter the logo or wordmark color to anything other than our primary color</li>
-          </ul>
-        </div>
-
-        <div class="donts_images">
-          <div class="dont_image_box">
-            <img src="images/dont_stretch.png">
-            <div>Stretch</div>
-          </div>
-
-          <div class="dont_image_box">
-            <img src="images/dont_crop.png">
-            <div>Crop</div>
-          </div>
-
-          <div class="dont_image_box">
-            <img src="images/dont_color.png">
-            <div>Color</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="alternate_options_wrapper">
-        <h3>Alternate Options</h3>
-
-        <ul>
-          <li>The circular badge can be used separately from the wordmark.</li>
-          <li>The icon may be extracted from the logo and applied separately - but it must remain white and have a background
-            of our primary blue color.</li>
-          <li>The wordmark may be used separately from the circular badge.</li>
-          <li>Logo Do’s and Do Not’s above still apply.</li>
-        </ul>
-
-        <div class="alternate_logo_images">
-          <img class="image_logos" src="images/ds_circle_logo.png">
-          <img class="image_logos" src="images/ds_square_logo.png">
-          <img class="text_logos" src="images/ds_icon_text_logo.png">
-          <img class="text_logos" src="images/ds_text_logo.png">
-        </div>
-      </div>
-
-      <div class="additional_branding_details">
-        <h3>Asset Download</h3>
-        <p>
-          <a href="#">Download .zip file.</a>
-        </p>
-
-        <h3>Usage</h3>
-        <p>
-          Please remember to adhere to the above guidlines when referencing and using our logos. If you are unsure of the correct protocol
-          for a particular usecase, feel free to ask us at the following email: support@dailysmarty.com.
-        </p>
-      </div>
-
+    <div>
+      <h2>hot keys</h2>
+      <button @click.shift="hotKey">Shift</button>
     </div>
   </div>
+
+  <div id="logoList" class="alternate_logo_images">
+    <img v-for="logo in logos" :class="logo.className" :src="logo.imgSrc">
+  </div>
+
   <script src="app.js"></script>
 </body>
 </html>
